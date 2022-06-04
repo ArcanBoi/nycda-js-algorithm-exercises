@@ -4,26 +4,35 @@
  * Returns true or false.
  */
 function equalsWithEpsilon(x, y, epsilon) {
-
+    // return (y >= (x - epsilon) && y <= (x + epsilon));
+    return (y >= (x - epsilon) && y <= (x + epsilon));
 }
 
+equalsWithEpsilon(5, 6, 2);
+equalsWithEpsilon(5, 6, 1);
+equalsWithEpsilon(7, -7, 5);
+equalsWithEpsilon(5, 10, 5);
+equalsWithEpsilon(5, 11, 5);
+equalsWithEpsilon(5, 10.1, 5)
+
+
 describe('equalsWithEpsilon', function() {
-  const assert = require("chai").assert;
+    const assert = require("chai").assert;
 
-  it('should work', function() {
-    assert.isTrue(equalsWithEpsilon(5, 6, 2));
-    assert.isTrue(equalsWithEpsilon(5, 6, 1));
-    assert.isFalse(equalsWithEpsilon(5, 6, 0.5));
-    assert.isFalse(equalsWithEpsilon(5, 6, 0));
+    it('should work', function() {
+        assert.isTrue(equalsWithEpsilon(5, 6, 2));
+        assert.isTrue(equalsWithEpsilon(5, 6, 1));
+        assert.isFalse(equalsWithEpsilon(5, 6, 0.5));
+        assert.isFalse(equalsWithEpsilon(5, 6, 0));
 
-    assert.isTrue(equalsWithEpsilon(7, -7, 100));
-    assert.isTrue(equalsWithEpsilon(7, -7, 14));
-    assert.isFalse(equalsWithEpsilon(7, -7, 5));
-  });
+        assert.isTrue(equalsWithEpsilon(7, -7, 100));
+        assert.isTrue(equalsWithEpsilon(7, -7, 14));
+        assert.isFalse(equalsWithEpsilon(7, -7, 5));
+    });
 
-  it('should work same as == with epsilon = 0', function() {
-    assert.isTrue(equalsWithEpsilon(1, 1, 0));
-    assert.isFalse(equalsWithEpsilon(1, 2, 0));
-    assert.isFalse(equalsWithEpsilon(-3, 1, 0));
-  });
+    it('should work same as == with epsilon = 0', function() {
+        assert.isTrue(equalsWithEpsilon(1, 1, 0));
+        assert.isFalse(equalsWithEpsilon(1, 2, 0));
+        assert.isFalse(equalsWithEpsilon(-3, 1, 0));
+    });
 });
