@@ -2,7 +2,7 @@
  * Given a string, counts the number of words inside it. Each word is separated by a single space character.
  */
 function countWords(str) {
-    return str.length === 0 ? '' : str.split(' ').length;
+    return str.length === 0 ? 0 : str.split(' ').length;
 }
 
 // console.log(countWords("hello world"));

@@ -3,12 +3,12 @@
  * Returns the new string.
  */
 function camelize(str) {
-    return str.split('').map((letter, i) => (i % 2 === 0) ? letter.toUpperCase() : letter.toLowerCase()).join('');
+    // return str.split('').map((letter, i) => (i % 2 === 0) ? letter.toUpperCase() : letter.toLowerCase()).join('');
 }
 
 // console.log(camelize('Mississippi'));
 
-describe('camelize', function() {
+/* describe('camelize', function() {
     const assert = require("chai").assert;
 
     it('should work on empty strings', function() {
@@ -33,4 +33,4 @@ describe('camelize', function() {
         assert.equal(camelize("lol"), "LoL");
         assert.equal(camelize("potato warrior"), "PoTaTo wArRiOr");
     });
-});
+}); */
